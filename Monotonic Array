@@ -1,0 +1,18 @@
+class Solution {
+    public boolean isMonotonic(int[] nums) {
+        boolean t = true, d =true;
+        for(int i=0;i<nums.length-1;i++){
+            if(nums[i]>nums[i+1]){
+                t = false;
+            }
+            if(nums[i]<nums[i+1]){
+                d = false;
+            }
+        }
+        if(t==false && d==false){
+            return false;
+        }else{
+            return true;
+        }
+    }
+}
