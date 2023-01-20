@@ -1,0 +1,19 @@
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int tot=0;
+        int index=-1;
+        for(int i=0;i<nums.length;i++){
+            tot = tot + nums[i];
+        }
+        int left = 0;
+        for(int i=0;i<nums.length;i++){
+            
+            if(tot-left-nums[i]==left){
+                index = i;
+                break;
+            }
+            left = left + nums[i];
+        }
+        return index;
+    }
+}
